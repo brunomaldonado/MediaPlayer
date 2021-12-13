@@ -1,29 +1,28 @@
 const cacheVersion = 'v1';
 
 const cacheAssets = [
-  // '/',
-  // 'index.html',
-  // 'src/main.js',
-  // 'src/MediaPlayer.js',
-  // 'src/plugins/AutoPlay.js',
-  // 'src/plugins/AutoPause.js',
-  // 'css/style.css',
-  // 'assets/media/jolene-Miley-Cyrus.webm',
-  // 'assets/media/banda-de-viento-paraje-montero.mp4',
+  '/',
+  '/index.html',
+  '/src/main.js',
+  '/src/mediaPlayer.js',
+  '/src/plugins/autoPlay.js',
+  '/src/plugins/autoPause.js',
+  '/css/style.css',
+  '/assets/media/jolene.mp4',
 ]
 
 self.addEventListener('install', event => {
-  event.waitUntil(precache());
+  // event.waitUntil(precache());
   console.log('service worker: Istalled')
-  // event.waitUntil(
-  //   caches
-  //   .open(cacheVersion)
-  //   .then(cache => {
-  //     console.log('service worker: caching files')
-  //     return cache.addAll(cacheAssets);
-  //   })
-  //   .then(() => self.skipWaiting())
-  // );
+  event.waitUntil(
+    caches
+    .open(cacheVersion)
+    .then(cache => {
+      console.log('service worker: caching files')
+      return cache.addAll(cacheAssets);
+    })
+    .then(() => self.skipWaiting())
+  );
 })
 
 self.addEventListener('fetch', event => {
@@ -40,10 +39,10 @@ self.addEventListener('fetch', event => {
   // event.waitUntil(updateCache(request));
 })
 
-const precache = async () => {
-  const cache = await caches.open(cacheVersion)
-  return cache.addAll(cacheAssets);
-}
+// const precache = async () => {
+//   const cache = await caches.open(cacheVersion)
+//   return cache.addAll(cacheAssets);
+// }
 
 const cacheResponse = async (request) => {
   const cache = await caches.open(cacheVersion);

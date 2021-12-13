@@ -45,7 +45,7 @@ class AutoPause {
       pauseButton.style.display = 'none';
       playButton.style.display = 'block';
       repeatRecorring.style.display = 'none';
-    videoParallax.style.display = 'none';
+      videoParallax.style.display = 'none';
 
       this.pausedByTag = true;
     }
@@ -63,7 +63,7 @@ class AutoPause {
       this.player.pause();
       playButton.style.display = 'none';
       repeatRecorring.style.display = 'none';
-    videoParallax.style.display = 'none';
+      videoParallax.style.display = 'none';
 
 
       // document.querySelector('.play_button').style.display = 'none';

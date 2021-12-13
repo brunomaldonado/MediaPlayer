@@ -5,9 +5,7 @@
 const videoParallax = document.querySelector('.video_parallax');
 
 class AutoPlay {
-  constructor(video) {
-    this.player = video;
-  }
+  constructor() {}
   run(player) {
     player.play();
     player.toggleMute();
