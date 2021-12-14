@@ -1,7 +1,7 @@
 import  MediaPlayer  from './mediaPlayer.js';
 import AutoPlay from './plugins/autoPlay.js';
 import AutoPause from './plugins/autoPause.js';
-// import Adds from '../src/plugins/adds.js';
+import AddsPlugin from './plugins/adds/index.js';
 
 const videoPlayer = document.querySelector('.video_player-container');
 const video = document.querySelector('.media');
@@ -18,7 +18,7 @@ const videoParallax = document.querySelector('.video_parallax');
 
 const player = new MediaPlayer({
   el:video, 
-  plugins:[new AutoPlay(), new AutoPause(),
+  plugins:[new AutoPlay(), new AutoPause(), new AddsPlugin(),
 ]});
 
 video.addEventListener('click', () => player.togglePlay());
@@ -139,6 +139,7 @@ function progreesClickPosition(e) {
   let percentage = (100 * clikPosition) / widthNav;
   let position = Math.floor(video.duration * (percentage / 100));
   video.currentTime = position;
+  videoParallax.style.display = 'none';
 
 }
 
@@ -150,3 +151,9 @@ function recorring(e) {
   repeatRecorring.style.display = 'none';
   pauseButton.style.display = 'block';
 }
+
+// closeButton.addEventListener('click', close);
+
+// const close = () => {
+//   console.log('click');
+// }

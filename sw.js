@@ -13,12 +13,12 @@ const cacheAssets = [
 
 self.addEventListener('install', event => {
   // event.waitUntil(precache());
-  console.log('service worker: Istalled')
+  // console.log('service worker: Istalled')
   event.waitUntil(
     caches
     .open(cacheVersion)
     .then(cache => {
-      console.log('service worker: caching files')
+      // console.log('service worker: caching files')
       return cache.addAll(cacheAssets);
     })
     .then(() => self.skipWaiting())

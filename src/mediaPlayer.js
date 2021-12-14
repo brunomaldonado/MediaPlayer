@@ -1,5 +1,4 @@
 
-
 let pauseButton = document.querySelector('.pause_button');
 let playButton = document.querySelector('.play_button');
 let muteButton = document.querySelector('.mute_button');
@@ -38,7 +37,6 @@ class MediaPlayer {
   togglePlay() {
     if (this.media.paused) {
       this.media.play();
-    
       pauseButton.style.display = 'block';
       playButton.style.display = 'none';
       repeatRecorring.style.display = 'none';
@@ -50,7 +48,6 @@ class MediaPlayer {
       pauseButton.style.display = 'none';
       playButton.style.display = 'block';
       videoParallax.style.display = 'none';
-
     }
   }
 

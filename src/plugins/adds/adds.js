@@ -1,12 +1,5 @@
 
-export interface Add {
-  imageUrl: string;
-  title: string;
-  body: string;
-  url: string;
-}
-
-const ALL_ADDS: Add[] = [
+const ADD_LIST = [
   {
     imageUrl:
       'https://static.platzi.com/media/achievements/badge-profesional-javascript-13538df2-24ce-433f-9aa6-e34eed608e70.png',
@@ -33,16 +26,6 @@ const ALL_ADDS: Add[] = [
       'Crea aplicaciones backend utilizando Node.js, Express y Mongo. Entiende cómo funciona Javascript en un servidor y escribe aplicaciones con Node.js.',
     url: 'https://platzi.com/cursos/backend-nodejs/',
   },
-
-  // {
-  //   imageUrl:
-  //     'https://static.platzi.com/media/achievements/badge-prework-da6b0493-9908-40f3-ad53-f5d330b995b8.png',
-  //   title:
-  //     'Comienza tus proyectos de desarrollo para JavaScript configurando un entorno de desarrollo cómodo y adaptado a tus necesidades.',
-  //   body:
-  //     'Mejora tus habilidades en Javascript. Conoce Typescript y cómo puedes ocuparlo para mejorar el control de tus variables.',
-  //   url: 'https://platzi.com/cursos/prework/',
-  // },
 
   {
     imageUrl:
@@ -84,10 +67,7 @@ const ALL_ADDS: Add[] = [
 
 
 class Adds {
-  private static instance: Adds;
-  private adds: Add[]; //adds va ser un arreglo del interface Add
-
-  private constructor() {
+   constructor() {
     this.initAdds();
   }
 
@@ -99,16 +79,16 @@ class Adds {
     return Adds.instance;
   }
 
-  private initAdds() {
-    this.adds = [...ALL_ADDS]; // creamos una copia de un arreglo a otro arreglo... de lo que se va a mostrar
+   initAdds() {
+    this.addList = [...ADD_LIST]; // creamos una copia de un arreglo a otro arreglo... de lo que se va a mostrar
   }
 
   getAdds() {
     //si lenght de adds es 0 osea se acabaron, volvamos a reiniciar.
-    if(this.adds.length === 0) {
+    if(this.addList.length === 0) {
       this.initAdds();
     }
-    return this.adds.pop(); //pop va sacr un valor del arreglo y lo va  mostrar
+    return this.addList.pop(); //pop va sacr un valor del arreglo y lo va  mostrar
   }
 }
 

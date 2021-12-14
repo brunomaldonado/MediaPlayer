@@ -140,9 +140,12 @@ main {
 .video_parallax {
   position: absolute;
   top: 0px;
+  width: 100%;
   display: none;
   transition: .4s ease-in-out;
   overflow: hidden;
+  /* padding-top: 1px; */
+
 }
 
 .video_parallax img{
@@ -370,6 +373,7 @@ main {
   font-size: 20px;
   font-weight: bold;
   color: #fff;
+  cursor: pointer;
 }
 
 .adds__close:hover {
@@ -694,6 +698,10 @@ main {
     width: 92%;
   }
 
+  .video_parallax {
+    padding-top: 1px;
+  }
+
   .section_grid {
     place-content: center;
     width: 500px;
@@ -737,6 +745,10 @@ main {
 @media screen and (min-width: 720px) {
   .top_header {
     width: 90%;
+  }
+
+  .video_parallax {
+    padding-top: 2px;
   }
 
   .video_progress {
@@ -820,6 +832,15 @@ main {
   .top_header {
     width: 90%;  
   }
+
+  .video_parallax {
+    padding-top: 1px;
+  }
+
+  /* .controlsPanel {
+    position: absolute;
+    bottom: 0px;
+  } */
 
   .video_progress {
     width: 93%;
@@ -919,12 +940,21 @@ main {
     width: 80%;
   }
 
+  .video_parallax {
+    padding-top: 2px;
+  }
+
   .main_container {
     align-items: flex-start;
     display: grid;
     grid-gap: 20px;
     grid-template-columns: 650px 420px;
   }
+
+  /* .controlsPanel {
+    position: absolute;
+    bottom: 1px;
+  } */
 
   .container_card {
     display: grid;
